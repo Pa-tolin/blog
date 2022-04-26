@@ -2,32 +2,39 @@
 
 <form method = "get" action = "posts/create">
     <br>
-    <div class="form.group">
+    <div class="form-group">
         <label for "title">Titulo</lable>
-        <input name="title" class="form-control" id="title" placeholder="Ingrese el titulo">
+        <input id="title" name="title" class="form-control" placeholder="Ingrese el titulo">
     </div>
     <br>
-    <div class="form.group">
+    <div class="form-group">
         <label for "content">Contenido del post</lable>
         <input name="content" class="form-control" placeholder="Escriba su post">
     </div>
     <br>
-    <div class="form.group">
+    <div class="form-group">
         <label for "image_url">Imagen</lable>
-        <input name="image_url" class="form-control" id="image_url" placeholder="Ingrese la url de su imagen">
+        <input id="image_url" name="image_url" class="form-control" placeholder="Ingrese la url de su imagen">
     </div>
     <br>
-    <button type="submit" class="btn btn-ptimary">Enviar</button>
+    <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
 <br>
 
-<table class= table>
+<table class="table">
+    <tr>
+      <th>Fecha de creación</th>
+      <th>Título</th>
+      <th>Contenido</th>
+      <th>Imagen</th>
+    </tr>
+      
     <% @posts.each do |post| %>
         <tr>
-          <td><%= @post.title%></td>
-          <td><%= @post.created_at%></td>
-          <td><%= @post.content%></td>
-          <td><%= image_tag post.image_url, :type => :upload, :width => 200, :height =>200, :crop => :fill%></td>
+          <td><%= post.title%></td>
+          <td><%= post.created_at%></td>
+          <td><%= post.content%></td>
+          <td><%= post.image_url%></td>
         </tr>
     <% end %>
 </table>

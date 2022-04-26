@@ -5,6 +5,6 @@ class Post < ApplicationRecord
 
     before_save :censurar
     def censurar
-        self.content = self.content.gsub('spoiler', '')
+        self.content = self.content.downcase.gsub('spoiler', '')
     end
 end

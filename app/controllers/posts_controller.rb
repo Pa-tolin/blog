@@ -5,9 +5,9 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(
-      title: params['title'],
-      content: params['content'],
-      image: params['image'])
+      title: params[:titulo],
+      content: params[:contenido],
+      image_url: params[:url_img])
    
     if @post.save
       redirect_to root_path
