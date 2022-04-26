@@ -1,17 +1,5 @@
-<h1>Posts</h1>
-
-<table class= table>
-    <% @posts.each do |post| %>
-        <tr>
-          <td><%= @post.title%></td>
-          <td><%= @post.created_at%></td>
-          <td><%= @post.content%></td>
-          <td><%= image_tag post.image_url, :type => :upload, :width => 200, :height =>200, :crop => :fill%></td>
-        </tr>
-    <% end %>
-</table>
-
 <h2>Ingrese su post</h2>
+
 <form method = "get" action = "posts/create">
     <br>
     <div class="form.group">
@@ -31,3 +19,15 @@
     <br>
     <button type="submit" class="btn btn-ptimary">Enviar</button>
 </form>
+<br>
+
+<table class= table>
+    <% @posts.each do |post| %>
+        <tr>
+          <td><%= @post.title%></td>
+          <td><%= @post.created_at%></td>
+          <td><%= @post.content%></td>
+          <td><%= image_tag post.image_url, :type => :upload, :width => 200, :height =>200, :crop => :fill%></td>
+        </tr>
+    <% end %>
+</table>
