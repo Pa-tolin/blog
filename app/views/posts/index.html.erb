@@ -1,2 +1,33 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h1>Posts</h1>
+
+<table class= table>
+    <% @posts.each do |post| %>
+        <tr>
+          <td><%= @post.title%></td>
+          <td><%= @post.created_at%></td>
+          <td><%= @post.content%></td>
+          <td><%= image_tag post.image_url, :type => :upload, :width => 200, :height =>200, :crop => :fill%></td>
+        </tr>
+    <% end %>
+</table>
+
+<h2>Ingrese su post</h2>
+<form method = "get" action = "posts/create">
+    <br>
+    <div class="form.group">
+        <label for "title">Titulo</lable>
+        <input name="title" class="form-control" id="title" placeholder="Ingrese el titulo">
+    </div>
+    <br>
+    <div class="form.group">
+        <label for "content">Contenido del post</lable>
+        <input name="content" class="form-control" placeholder="Escriba su post">
+    </div>
+    <br>
+    <div class="form.group">
+        <label for "image_url">Imagen</lable>
+        <input name="image_url" class="form-control" id="image_url" placeholder="Ingrese la url de su imagen">
+    </div>
+    <br>
+    <button type="submit" class="btn btn-ptimary">Enviar</button>
+</form>

@@ -1,2 +1,18 @@
-<h1>Posts#create</h1>
-<p>Find me in app/views/posts/create.html.erb</p>
+<% if @post.errors.any? %>
+    <div id="error_explanation">
+        <h2>
+            <%= pluralize(@post.errors.count, "error") %>
+            no se permiti+o el registro:
+        </h2>
+        <ul>
+            <% @post.errors.full_messages.each do |msg| %>
+                <li><%= msg %> </li>
+            <% end %>
+        </ul>
+    </div>
+<% else %>
+    <h1> Te registraste con éxito </h1>
+    <%= link_to("Revisar listado de Posts", "/") %>
+<% end %>
+
+<p>ingresado</p>
