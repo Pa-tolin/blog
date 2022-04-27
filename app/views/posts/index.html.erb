@@ -23,8 +23,8 @@
 
 <table class="table">
     <tr>
-      <th>Fecha de creación</th>
       <th>Título</th>
+      <th>Fecha de creación</th>
       <th>Contenido</th>
       <th>Imagen</th>
     </tr>
@@ -34,7 +34,7 @@
           <td><%= post.title%></td>
           <td><%= post.created_at%></td>
           <td><%= post.content%></td>
-          <td><%= post.image_url%></td>
+          <td><img src = <%= post.image_url%> width= "200" height= "200"></td>
         </tr>
     <% end %>
 </table>

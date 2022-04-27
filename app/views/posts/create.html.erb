@@ -2,7 +2,7 @@
     <div id="error_explanation">
         <h2>
             <%= pluralize(@post.errors.count, "error") %>
-            no se permitio el registro:
+            no se permitió el registro:
         </h2>
         <ul>
             <% @post.errors.full_messages.each do |msg| %>
